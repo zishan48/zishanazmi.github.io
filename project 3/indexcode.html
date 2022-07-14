@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Loading Animation</title>
+	<style type="text/css">
+		.size {
+			width: 100%;
+			height: 1000px;
+			overflow: hidden;
+			background-color: black;
+			color: white;
+		}
+		.head {
+			margin-top: 30px;
+		}
+		.html {
+			margin-top: 80px;
+		}
+		.right {
+			display: flex;
+			float: right;
+			margin-right: 20px;
+			padding: 5px 10px 7px;
+		}
+	</style>
+</head>
+<body>
+	<center>
+		<h1 class="head">Loading Animation</h1>
+		<h2 class="html">HTML CODE</h2>
+	</center>
+	<button class="right" onclick="myFunction()">copy</button><br><br>
+	<textarea class="size" id="myInput">
+
+
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+			<title>Loading Animation</title>
+			<style type="text/css">
+				body{
+					background-color: white;
+				}
+				.pos {
+					position: relative;
+					top: 100px;
+				}
+				
+				.loader{
+					width: 100px;
+					height: 100px;
+					position: relative;
+				}
+				.loader::before,
+				.loader::after{
+					content: '';
+					position: absolute;
+					width: inherit;
+					height: inherit;
+					border-radius: 50%;
+					mix-blend-mode: multiply;
+					animation: rotate 1s infinite cubic-bezier(0.77,0,0.175,1);
+				}
+				.loader::before{
+					background-color: #fc3f9e;
+				}
+				.loader::after{
+					background-color: #50e8f3;
+					animation-delay: .5s;
+				}
+				@keyframes rotate {
+					0%,100% {
+						left: 100px;
+					}
+					25%{
+						transform: scale(0.2);
+					}
+					50%{
+						left: 0;
+					}
+					75%{
+						transform: scale(1);
+					}
+				}
+			</style>
+			
+		</head>
+		<body>
+			<center class="pos">
+				<span class="loader"></span>
+			</center>
+		</body>
+		</html>
+
+
+
+	</textarea>
+
+
+	<script type="text/javascript">
+	function myFunction(){
+			var copyText = document.getElementById("myInput");
+			copyText.select();
+			copyText.setSelectionRange(0,99999999999999);
+			navigator.clipboard.writeText(copyText.value);
+		}
+	</script>
+
+</body>
+</html>
